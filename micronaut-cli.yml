@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: heroes
+---
+testFramework: junit
+sourceLanguage: java

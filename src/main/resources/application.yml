@@ -1,0 +1,12 @@
+micronaut:
+    application:
+        name: heroes
+    server:
+        port: 8080
+
+datasources:
+    default:
+        url: jdbc:postgresql://localhost:5432/local?currentSchema=public
+        username: postgres
+        password: admin
+        driverClassName: org.postgresql.Driver

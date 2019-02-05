@@ -1,0 +1,6 @@
+datasources:
+    default:
+        url: jdbc:h2:mem:test;MODE=PostgreSQL;INIT=RUNSCRIPT FROM 'classpath:create.sql';
+        driverClassName: org.h2.Driver
+        username: sa
+        password: ''
