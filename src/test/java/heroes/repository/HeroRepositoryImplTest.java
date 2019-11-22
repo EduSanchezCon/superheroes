@@ -63,21 +63,21 @@ public class HeroRepositoryImplTest {
         verify(powerDAO, times(2)).insertPower(any(PowerDaoDTO.class));
     }
 
-    @Test(expected = InternalError.class)
+    @Test(expected = RuntimeException.class)
     public void whenSomeInsertionFailsShouldCompensatePreviousOnes(){
 
         Hero hero = HeroMother.heroWith2Powers();
         PowerDaoDTO failingPower = new PowerDaoDTO(hero.getId(), hero.getPowers().get(1));
 
-        when(powerDAO.insertPower(failingPower)).thenThrow(new InternalError("Unexpected error"));
+        when(powerDAO.insertPower(failingPower)).thenThrow(new RuntimeException("Unexpected error"));
 
         try {
             sut.saveHero(hero);
-        }catch (Throwable t){
+        }catch (Exception e){
             InOrder inOrder = inOrder(heroDAO, powerDAO);
             inOrder.verify(powerDAO, times(1)).deletePower(any(PowerDaoDTO.class));
             inOrder.verify( heroDAO).deleteHero( new HeroDaoDTO(hero));
-            throw t;
+            throw e;
         }
     }
 

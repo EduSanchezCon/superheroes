@@ -1,0 +1,101 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Heroes",
+		"_postman_id": "592f339f-c469-a4c1-bc15-cc04de7932ed",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST Hero",
+			"request": {
+				"url": "localhost:8080/heroes",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Google-Token",
+						"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImJlMmZiMmY3ZDQ5ZDQwYjEzYTNmNjM2MjE5MDkzYjcyZmUxNzc5ZTkifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJpYXQiOjE0ODQ0MDYzMDksImV4cCI6MTQ4NDQwOTkwOSwiYXRfaGFzaCI6ImlEU3ZSdWxsb19fRFJjdzBPQWVnekEiLCJhdWQiOiI0MDc0MDg3MTgxOTIuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMTcwMjYwMzcyMzE3Mjg4Mjc3MjAiLCJhenAiOiI0MDc0MDg3MTgxOTIuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20ifQ.pGAWUyMoGaCAgTuhITDdQ9YW_ckKDTolE1UZ3Iq3pbKtKGGy7lw70ACcvWiulzWcA7bGQqt_u7A4y4irQUJbi3_0sm3Keswb1zQzXrE32ZyH7Y2VXMjhS8hl7uwBwMymRm5DabOUblO2m-Z1DlCllRjE1UpkSsz9Sjd0MWwutvoHul7qZzeIEC7OtqEzVfZz8w-DZRwwhNiF_SScqhE_qEPuWnCfM_NcI65bvOtmimVA3lWByk4atTfz9CY8vVZCuaaO-rSApZ6oWq74KX-jRZEan6lsTl44JEWVpiQNSvwzmE55IY5ALYlh0Czk-H_sug0mS0LBKByAczb2UenKtw",
+						"description": ""
+					},
+					{
+						"key": "Email",
+						"value": "esanchez@autentia.com",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"Ultra Edu\",\n\t\"privateName\":\"Edu\", \n\t\"weakness\":\"Spaguetti code\",\n\t\"powers\":[\n\t\t{\"name\": \"Invisibilidad\", \"description\":\"Cuando naaadieeeee me veeeee\"},\n\t\t{\"name\": \"Super lentitud\", \"description\":\"Vísteme despacio que tengo prisa\"}\n\t\t]\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET Heroes",
+			"request": {
+				"url": "localhost:8080/heroes",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Google-Token",
+						"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImJlMmZiMmY3ZDQ5ZDQwYjEzYTNmNjM2MjE5MDkzYjcyZmUxNzc5ZTkifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJpYXQiOjE0ODQ0MDYzMDksImV4cCI6MTQ4NDQwOTkwOSwiYXRfaGFzaCI6ImlEU3ZSdWxsb19fRFJjdzBPQWVnekEiLCJhdWQiOiI0MDc0MDg3MTgxOTIuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMTcwMjYwMzcyMzE3Mjg4Mjc3MjAiLCJhenAiOiI0MDc0MDg3MTgxOTIuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20ifQ.pGAWUyMoGaCAgTuhITDdQ9YW_ckKDTolE1UZ3Iq3pbKtKGGy7lw70ACcvWiulzWcA7bGQqt_u7A4y4irQUJbi3_0sm3Keswb1zQzXrE32ZyH7Y2VXMjhS8hl7uwBwMymRm5DabOUblO2m-Z1DlCllRjE1UpkSsz9Sjd0MWwutvoHul7qZzeIEC7OtqEzVfZz8w-DZRwwhNiF_SScqhE_qEPuWnCfM_NcI65bvOtmimVA3lWByk4atTfz9CY8vVZCuaaO-rSApZ6oWq74KX-jRZEan6lsTl44JEWVpiQNSvwzmE55IY5ALYlh0Czk-H_sug0mS0LBKByAczb2UenKtw",
+						"description": ""
+					},
+					{
+						"key": "Email",
+						"value": "esanchez@autentia.com",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"Ultra Edu\",\n\t\"privateName\":\"Edu\", \n\t\"weakness\":\"Spaguetti code\",\n\t\"powers\":[\n\t\t{\"name\": \"mega tontuna\", \"description\":\"ser especialmente tonto\"},\n\t\t{\"name\": \"super lentitud\", \"description\":\"visteme despacio que tengo prisa\"}\n\t\t]\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "POST Hero 2",
+			"request": {
+				"url": "localhost:8080/heroes",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Google-Token",
+						"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImJlMmZiMmY3ZDQ5ZDQwYjEzYTNmNjM2MjE5MDkzYjcyZmUxNzc5ZTkifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJpYXQiOjE0ODQ0MDYzMDksImV4cCI6MTQ4NDQwOTkwOSwiYXRfaGFzaCI6ImlEU3ZSdWxsb19fRFJjdzBPQWVnekEiLCJhdWQiOiI0MDc0MDg3MTgxOTIuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMTcwMjYwMzcyMzE3Mjg4Mjc3MjAiLCJhenAiOiI0MDc0MDg3MTgxOTIuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20ifQ.pGAWUyMoGaCAgTuhITDdQ9YW_ckKDTolE1UZ3Iq3pbKtKGGy7lw70ACcvWiulzWcA7bGQqt_u7A4y4irQUJbi3_0sm3Keswb1zQzXrE32ZyH7Y2VXMjhS8hl7uwBwMymRm5DabOUblO2m-Z1DlCllRjE1UpkSsz9Sjd0MWwutvoHul7qZzeIEC7OtqEzVfZz8w-DZRwwhNiF_SScqhE_qEPuWnCfM_NcI65bvOtmimVA3lWByk4atTfz9CY8vVZCuaaO-rSApZ6oWq74KX-jRZEan6lsTl44JEWVpiQNSvwzmE55IY5ALYlh0Czk-H_sug0mS0LBKByAczb2UenKtw",
+						"description": ""
+					},
+					{
+						"key": "Email",
+						"value": "esanchez@autentia.com",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"Code Woman\",\n\t\"privateName\":\"Secreto\", \n\t\"weakness\":\"Ninguna debilidad\",\n\t\"powers\":[\n\t\t{\"name\": \"DRY\", \"description\":\"Don't repeat yourself\"},\n\t\t{\"name\": \"TDD\", \"description\":\"Primero el Test!\"}\n\t\t]\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

@@ -49,9 +49,9 @@ public class HeroRepositoryImpl implements HeroRepository {
             hero.getPowers().stream()
                     .map(power -> new PowerDaoDTO(hero.getId(), power))
                     .forEach(p -> insertPower(p, compensations));
-        }catch ( Throwable t){
+        } catch ( Exception e){
             compensations.forEach(Runnable::run);
-            throw t;
+            throw e;
         }
         return hero.getId();
     }
