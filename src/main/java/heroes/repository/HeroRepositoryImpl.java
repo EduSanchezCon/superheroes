@@ -8,10 +8,8 @@ import heroes.model.Hero;
 import heroes.model.Power;
 
 import javax.inject.Singleton;
-import java.util.Deque;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.LinkedBlockingDeque;
 import java.util.stream.Collectors;
 
 @Singleton
@@ -43,26 +41,11 @@ public class HeroRepositoryImpl implements HeroRepository {
     @Override
     public String saveHero(Hero hero) {
 
-        Deque<Runnable> compensations = new LinkedBlockingDeque<>();
-        try {
-            insertHero(new HeroDaoDTO(hero), compensations);
-            hero.getPowers().stream()
-                    .map(power -> new PowerDaoDTO(hero.getId(), power))
-                    .forEach(p -> insertPower(p, compensations));
-        } catch ( Exception e){
-            compensations.forEach(Runnable::run);
-            throw e;
-        }
+        heroDAO.insertHero(new HeroDaoDTO(hero));
+        hero.getPowers().stream()
+                .map(power -> new PowerDaoDTO(hero.getId(), power))
+                .forEach(p -> powerDAO.insertPower(p));
+
         return hero.getId();
-    }
-
-    private void insertPower(PowerDaoDTO power, Deque<Runnable> compensations) {
-        powerDAO.insertPower(power);
-        compensations.push(() -> powerDAO.deletePower(power));
-    }
-
-    private void insertHero(HeroDaoDTO hero, Deque<Runnable> compensations) {
-        heroDAO.insertHero(hero);
-        compensations.push(() -> heroDAO.deleteHero(hero));
     }
 }
